@@ -1,0 +1,52 @@
+{
+  "name": "onerepmax-lib",
+  "version": "0.1.0",
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "directories": {
+    "test": "tests"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts",
+    "dev": "tsup src/index.ts --watch",
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "typecheck": "tsc --noEmit",
+    "ci": "npm run lint && npm run typecheck && npm run test && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrsJsk/onerepmax-lib.git"
+  },
+  "keywords": [],
+  "author": "https://joskonic.com/",
+  "license": "MI",
+  "bugs": {
+    "url": "https://github.com/BrsJsk/onerepmax-lib/issues"
+  },
+  "homepage": "https://github.com/BrsJsk/onerepmax-lib#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.53.1",
+    "@typescript-eslint/parser": "^8.53.1",
+    "eslint": "^9.39.2",
+    "prettier": "3.8.0",
+    "tsup": "^8.5.1",
+    "vitest": "^4.0.17"
+  },
+  "dependencies": {
+    "uuid": "^13.0.0"
+  }
+}
